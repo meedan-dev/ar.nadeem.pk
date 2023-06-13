@@ -2,9 +2,10 @@ import TopBar from './components/TopBar'
 import Home from './components/Home'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
-import Portfolio from './components/Portfolio'
+// import Portfolio from './components/Portfolio'
 import { useTheme as useNextTheme } from 'next-themes'
 import { useTheme, Container } from '@nextui-org/react'
+import './App.css';
 // import { useEffect } from 'react';
 // import { useState } from 'react';
 
@@ -23,12 +24,12 @@ function App() {
     <div>
       <TopBar setTheme={setTheme} isDark={isDark} type={type} />
 
-      <Container justify="center" alignItems='center' >
+      <Container className='body' >
 
         <Home />
         <Projects />
         <Skills />
-        <Portfolio />
+        {/* <Portfolio /> */}
       </Container>
     </div>
   );

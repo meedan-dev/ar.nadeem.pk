@@ -12,7 +12,7 @@ function TopBar({ setTheme, isDark, type }) {
         "Home",
         "Projects",
         "Skills",
-        "Portfolio",
+        // "Portfolio",
     ];
 
     return (

@@ -1,5 +1,5 @@
 import { Text } from '@nextui-org/react'
-
+import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 
 const Portfolio = () => {
 

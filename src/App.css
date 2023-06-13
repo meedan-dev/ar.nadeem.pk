@@ -1,0 +1,8 @@
+@media only screen and (min-width: 1700px) {
+  .body {
+    /* display: flex; */
+    flex-direction: column;
+    padding-left: 300px;
+    padding-right: 300px;
+  }
+}
