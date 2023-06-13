@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.6c8d524c.css","mappings":"AAAA,0CACE,MAEE,qBAAsB,CACtB,kBAAmB,CACnB,mBACF,CACF","sources":["App.css"],"sourcesContent":["@media only screen and (min-width: 1700px) {\r\n  .body {\r\n    /* display: flex; */\r\n    flex-direction: column;\r\n    padding-left: 300px;\r\n    padding-right: 300px;\r\n  }\r\n}\r\n"],"names":[],"sourceRoot":""}
