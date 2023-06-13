@@ -2,9 +2,38 @@ import React from "react";
 import { Navbar, Link, Text } from "@nextui-org/react";
 import { Switch } from "@nextui-org/react";
 import { Spacer } from '@nextui-org/react';
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
-function TopBar({ setTheme, isDark, type }) {
+function TopBar({ setTheme, isDark, type, scrollToElement }) {
+    function isInViewport(offset = 0) {
+        const h = document.getElementById('#Home');
+        const p = document.getElementById('#Projects');
+        const s = document.getElementById('#Skills');
+        // console.log(s)
+        if (!h || !s || !p) return false;
+        if (isVisible(h)) {
+            setActiveButton('Home')
+        }
+        else if (isVisible(p)) {
+            setActiveButton('Projects')
+        }
+
+        else if (isVisible(s)) {
+            setActiveButton('Skills')
+        }
+
+    };
+    function isVisible(element, offset = 0) {
+        const top = element.getBoundingClientRect().top;
+        return (top + offset) >= 0 && (top - offset) <= window.innerHeight;
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', isInViewport);
+        return () => window.removeEventListener('scroll', isInViewport);
+    });
+
+
     const navbarToggleRef = useRef()
 
     const [activeButton, setActiveButton] = useState('Home');
@@ -41,9 +70,9 @@ function TopBar({ setTheme, isDark, type }) {
                             css={{
                                 minWidth: "100%",
                             }}
-                            href={`#${item}`}
+                            // href={`#${item}`}
                             isActive={activeButton === `${item}`}
-                            onClick={() => { setActiveButton(`${item}`); navbarToggleRef.current.click() }}
+                            onPress={() => { navbarToggleRef.current.click(); scrollToElement(`${item}`); }}
                         >
                             {item}
                         </Link>
@@ -56,7 +85,12 @@ function TopBar({ setTheme, isDark, type }) {
                     menuItems.map((item, index) => (
                         <Navbar.Link
                             isActive={activeButton === `${item}` ? true : false}
-                            onClick={() => { setActiveButton(`${item}`) }} href={`#${item}`}>
+                            onPress={() => {
+
+                                scrollToElement(`${item}`);
+                            }}
+                        // href={`#${item}`}
+                        >
                             {`${item}`}
                         </Navbar.Link>
 

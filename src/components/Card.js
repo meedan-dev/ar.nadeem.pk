@@ -48,8 +48,8 @@ function Card1({
 
 
 
-            <Card css={{ w: "500px", h: "350px" }}>
-                <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
+            <Card css={{ maxW: "500px", h: "350px" }}>
+                <Card.Header isBlurred css={{ bgBlur: "#0f111466", zIndex: 1, borderTop: "$borderWeights$light transparent $gray800", position: "absolute", zIndex: 1, top: 0 }}>
                     <Col>
                         <Text size={12} weight="bold" transform="uppercase" color="#9E9E9E">
                             {/* Your day your way */}

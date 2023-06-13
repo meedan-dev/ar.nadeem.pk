@@ -1,4 +1,4 @@
-import { Text, Card, Row, Grid } from '@nextui-org/react'
+import { Text, Card } from '@nextui-org/react'
 import './Component.css'
 const Home = () => {
 
@@ -8,7 +8,7 @@ const Home = () => {
             <Text h1 css={{
                 textGradient: "45deg, $blue600 -20%, $pink600 50%",
             }}>
-                Home
+                AbdulRahman
             </Text>
 
 
@@ -25,11 +25,11 @@ const Home = () => {
                         css={{
                             'border': '1px solid transparent',
                             'border-image': 'linear-gradient(to right, blue, purple) 1',
-                            'border-image-slice': '1',
+                            'border-image-slice': '1'
                         }}
                     />
                 </Card.Body>
-                <Card.Footer
+                {/* <Card.Footer
                     isBlurred
                     css={{
                         position: "absolute",
@@ -37,34 +37,31 @@ const Home = () => {
                         borderTop: "$borderWeights$light transparent $gray800",
                         bottom: 0,
                         zIndex: 1,
-                        height: "6%",
+                        maxHeight: "100s%",
                     }}
 
                 >
-                    <Row>
-                        <Text >Software Enginner</Text>
+                    <Row >
+                        <Text >AbdulRahman</Text>
                     </Row>
-                </Card.Footer>
+                </Card.Footer> */}
             </Card>
 
-            <Grid.Container>
-                <Grid Wrap='nowrap' Direction='row'>
-                    <Text p size={20} >
-                        I am &nbsp;
-                    </Text>
-                </Grid>
-                <Grid Wrap='nowrap' Direction='row'>
-                    <Text h3 css={{
-                        textGradient: "45deg, $blue600 -20%, $pink600 50%",
-                    }}>
-                        Software Engineer
-                    </Text>
-                </Grid>
-                <Grid Wrap='nowrap' Direction='row'>
-                    <Text p size={20} >, currently building full stack websites.</Text>
-                </Grid>
+            <div styles={{ clear: 'both' }}>
+                <Text p size={20} style={{ float: "left" }}>
+                    I am a &nbsp;
+                </Text>
 
-            </Grid.Container>
+                <Text h3 css={{
+                    textGradient: "45deg, $blue600 -20%, $pink600 50%",
+                }} style={{ float: "left" }}>
+                    Software Engineer
+                </Text>
+                <Text p size={20} style={{ float: "left" }}>, &nbsp;</Text>
+                <Text p size={20} style={{ float: "left" }}>currently building full stack websites.</Text>
+
+            </div>
+
 
 
         </div >
